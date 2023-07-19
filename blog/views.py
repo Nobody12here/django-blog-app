@@ -13,4 +13,4 @@ def post_details(request,id):
 	except Post.DoesNotExist:
 		raise Http404('Post does not exists')
 	
-	return render(request,'blog/post/detail.html',{'post':post})
+	return render(request,'blog/post/details.html',{'post':post})
