@@ -4,8 +4,8 @@ from django.http import Http404
 # Create your views here.
 def post_list(request):
 	 #Fetches the post irrespective of the status
-	posts = Post.objects.all()
-	return render('blog/post/list.html',{'posts':posts})
+	posts = Post.published.all()
+	return render(request,'blog/post/list.html',{'posts':posts})
 
 def post_details(request,id):
 	try:
@@ -13,4 +13,4 @@ def post_details(request,id):
 	except Post.DoesNotExist:
 		raise Http404('Post does not exists')
 	
-	return render('blog/post/detail.html',{'post':post})
+	return render(request,'blog/post/detail.html',{'post':post})

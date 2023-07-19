@@ -1,10 +1,18 @@
-{% loadstatic %}
+{% load static %}
 <html>
 	<head>
-		<title>Blog</title>
-		<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+		<title>{%block title%}{% endblock %}</title>
+		<link rel="stylesheet" href="{% static 'blog.css' %}">
 	</head>
 	<body>
-		<h2>My blog</h2>	
+		
+		<div id="my-content">
+			{%block content%}
+			{%endblock%}
+		</div>	
+		<div id="sidebar">
+			<h2>My blog</h2>
+			<p>this is my first blog on django</p>
+		</div>
 	</body>
 </html>
