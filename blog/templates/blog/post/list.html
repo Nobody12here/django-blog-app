@@ -12,6 +12,7 @@
 			{{post.body|truncatewords:40|linebreaks }}
 		</p>
 	{%endfor%}
-	{%include "./paginator.html" with page=posts %}
+	
+	{%include "./paginator.html" with page=page_obj %}
 {%endblock%}
 
